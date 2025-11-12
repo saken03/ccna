@@ -1,0 +1,20 @@
+S1:
+en
+conf t
+host S1
+vlan 10
+vlan 20
+exit
+int f0/1
+switchport mode access
+sw ac vl 10
+exit    
+in f0/2
+sw mo ac
+sw ac vl 20
+exit
+in g0/1
+sw mo tr
+sw tr all vl 10,20
+no shut
+n
